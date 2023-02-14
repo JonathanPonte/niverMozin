@@ -1,0 +1,70 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efeito Máquina de Escrever</title>
+    <style>
+        /* CSS */
+
+        .gradient-custom {
+            /* fallback for old browsers */
+            background: #6a11cb;
+
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
+
+        * {
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .typing {
+            font-family: 'Special Elite', cursive;
+            font-size: 2em;
+            padding: 1em;
+        }
+    </style>
+</head>
+
+<body class="gradient-custom" style="display: flex; align-items: center;" onclick="deuBom()">
+    <section class="typing">
+        <p id="text"></p>
+    </section>
+
+    <script>
+
+        var content = 'Eu decidi fazer mais uma lembracinha, e te mostrar o tanto de coisa que a gente já viveu e que espero viver muito mais com voce';
+        var text = document.getElementById('text');
+
+        var speed = 100;
+        var cont = 0;
+
+
+        function typeWriter() {
+            if (cont < content.length) {
+                text.textContent += content.charAt(cont);
+                cont++;
+                setTimeout(typeWriter, speed);
+            } 
+            console.log('opa');
+        }
+
+        typeWriter();
+
+        function deuBom(){
+            if (cont > content.length - 1) {
+            window.location.href = 'page4.html';
+            }
+        }
+
+    </script>
+</body>
+
+</html>
